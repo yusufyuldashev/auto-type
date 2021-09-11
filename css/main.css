@@ -1,0 +1,62 @@
+/* Common styles */
+html{
+  box-sizing: border-box;
+}
+*, *::after, *::before{
+  box-sizing: inherit;
+}
+body{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+img{
+  max-width: 100%;
+  display: block;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    opacity: .85;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6D18A;
+}
+.text{
+  text-align: center;
+}
+.alterable-text {
+  position: relative;
+}
+.alterable-text::after{
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 100%;
+  margin-left: 5px;
+  background-color: #222;
+  animation: blink 1.1s infinite;
+}
